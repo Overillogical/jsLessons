@@ -44,10 +44,10 @@ let isWinner = false;
 // console.log(`Computer choice: ${computerChoice}\nUser choice: ${userChoice}`)
 
 
-while(isWinner){
+while(!isWinner){
     userChoice = prompt("Выбери камень, ножницы или бумага");
     userChoice = userChoice.toLowerCase();
-    let randomNumber = Math.floor(Math.random*3);
+    let randomNumber = Math.floor(Math.random()*3);
     switch (randomNumber){
         case 0 :
             computerChoice='камень';
