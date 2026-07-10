@@ -1,0 +1,25 @@
+# Зависимости
+node_modules/
+
+# Сборка / вывод
+dist/
+build/
+
+# Логи
+*.log
+npm-debug.log*
+
+# Окружение
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Claude
+CLAUDE.md
