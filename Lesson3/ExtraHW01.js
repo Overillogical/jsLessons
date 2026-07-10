@@ -9,7 +9,7 @@ function fizzbuzz(number){
     const dividableByFive = number%5===0;
     if(dividableByThree){
         if(dividableByFive){
-            return 'Fizzbuzz'
+            return 'FizzBuzz'
         }
         return 'Fizz'
     }else if(dividableByFive){
