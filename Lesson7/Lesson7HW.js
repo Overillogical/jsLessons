@@ -11,7 +11,7 @@ let usrs = 0;
 
 const server = http.createServer((request, response) => {
 
-    if (request.url !== '/favicon.ico') console.log(`${request.method} ${request.url} at ${new Date().toISOString()}`)
+    if (request.url !== '/favicon.ico') console.log(`[${request.method}] ${request.url} at ${new Date().toISOString()}`)
     if (request.url.startsWith('/users') && (request.url.split('/').length > 2)) {
         let found = false;
         let numberOfUser = +request.url.split('/').at(-1);
@@ -41,7 +41,7 @@ const server = http.createServer((request, response) => {
             break;
         case '/time':
             const now = new Date();
-            response.end(`${now.getHours()}:${now.getMinutes()}`)
+            response.end(`Current time is: ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`)
             break;
         case '/about':
             about++;
@@ -68,8 +68,8 @@ const server = http.createServer((request, response) => {
             response.end(JSON.stringify(rq))
             break;
         default:
-            // response.statusCode(404)
-            response.end('error , page not found')
+            response.statusCode = 404
+            response.end('Page not found')
     }
 })
 
